@@ -22,3 +22,11 @@ class CustomException(Exception):
     
     def __str__(self):
         return self.error_msg
+    
+
+try:
+    x = 1 / 0
+except Exception as e:
+    formatted_error = error_msg_detail(e)
+    
+    raise CustomException(formatted_error)
